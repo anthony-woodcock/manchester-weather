@@ -1,0 +1,12 @@
+.container {
+    
+    text-align: center;
+}
+
+.col-sm-4 {
+    padding-bottom: 100px;
+}
+
+.jumbotron {
+    height: 200px;
+}
