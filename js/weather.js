@@ -22,13 +22,17 @@ request.onreadystatechange = function (){
         var description = responseJSON.weather[0].description
         var wind = responseJSON.wind.speed
         var humidity = responseJSON.main.humidity
+        var image = responseJSON.weather[0].icon
 
-        $( ".temp-kelvin" ).html('<h3>' + tempKelvin + ' kelvin"s' + '</h3>');
-        $( ".temp-cel" ).html('<h3>' + tempCelTwoDecimal + ' C' + '</h3>');
-        $( ".temp-fah" ).html('<h3>' + tempFahrenheitTwoDecimal + ' f' + '</h3>');
-        $( ".description" ).html('<h3>' + description + '</h3>');
-        $( ".humidity" ).html('<h3>' + humidity + ' %' + '</h3>');
-        $( ".wind" ).html('<h3>' + wind + ' Mph' + '</h3>');
+        //create var for image icon
+
+        $( ".temp-kelvin" ).html(tempKelvin + ' kelvin"s');
+        $( ".temp-cel" ).html(tempCelTwoDecimal + ' C'  );
+        $( ".temp-fah" ).html(tempFahrenheitTwoDecimal + ' f');
+        $( ".description" ).html(description);
+        $( ".humidity" ).html(humidity + ' %');
+        $( ".wind" ).html(wind + ' Mph');
+        $( ".image" ).html('<img src="' + 'http://openweathermap.org/img/w/' + image + '.png' + '">');
         
         
     }
