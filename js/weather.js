@@ -11,8 +11,6 @@ request.onreadystatechange = function (){
         //var weather = responseJSON.weather
 
         console.log(responseJSON);
-        //document.getElementById("temp").innerHTML = responseJSON.main.temp;
-       // document.getElementById("des").innerHTML = responseJSON.weather[0].description;
 
         var tempKelvin = responseJSON.main.temp 
         var tempCel = responseJSON.main.temp - 273.15
@@ -26,9 +24,9 @@ request.onreadystatechange = function (){
 
         //create var for image icon
 
-        $( ".temp-kelvin" ).html(tempKelvin + ' kelvin"s');
-        $( ".temp-cel" ).html(tempCelTwoDecimal + ' C'  );
-        $( ".temp-fah" ).html(tempFahrenheitTwoDecimal + ' f');
+        $( ".temp-kelvin" ).html(tempKelvin + ' &#8490;');
+        $( ".temp-cel" ).html(tempCelTwoDecimal + '  &#8451;'  );
+        $( ".temp-fah" ).html(tempFahrenheitTwoDecimal + '  &#8457;');
         $( ".description" ).html(description);
         $( ".humidity" ).html(humidity + ' %');
         $( ".wind" ).html(wind + ' Mph');
