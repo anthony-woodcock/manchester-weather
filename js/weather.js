@@ -7,22 +7,19 @@ request.onreadystatechange = function (){
     if(this.readyState === 4 && this.status === 200) {
         var responseJSON = JSON.parse(this.response)
 
-        //only displaying the weather object
-        //var weather = responseJSON.weather
-
-        console.log(responseJSON);
-
-        var tempKelvin = responseJSON.main.temp 
-        var tempCel = responseJSON.main.temp - 273.15
+        var main = responseJSON.main
+        var tempKelvin = main.temp 
+        var tempCel = tempKelvin - 273.15
         var tempCelTwoDecimal = tempCel.toFixed(2)
-        var tempFahrenheit = tempCel * 9/5 + 32
+        var tempFahrenheit = ((tempCel * 9)/5) + 32
         var tempFahrenheitTwoDecimal = tempFahrenheit.toFixed(2)
-        var description = responseJSON.weather[0].description
+        var weather = responseJSON.weather
+        var description = weather[0].description
         var wind = responseJSON.wind.speed
-        var humidity = responseJSON.main.humidity
-        var image = responseJSON.weather[0].icon
+        var humidity = main.humidity
+        var image = weather[0].icon
 
-        //create var for image icon
+
 
         $( ".temp-kelvin" ).html(tempKelvin + ' &#8490;');
         $( ".temp-cel" ).html(tempCelTwoDecimal + '  &#8451;'  );
@@ -31,7 +28,6 @@ request.onreadystatechange = function (){
         $( ".humidity" ).html(humidity + ' %');
         $( ".wind" ).html(wind + ' Mph');
         $( ".image" ).html('<img src="' + 'http://openweathermap.org/img/w/' + image + '.png' + '">');
-        
         
     }
 }
