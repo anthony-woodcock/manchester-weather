@@ -27,8 +27,7 @@ request.onreadystatechange = function (){
         $( ".description" ).html(description);
         $( ".humidity" ).html(humidity + ' %');
         $( ".wind" ).html(wind + ' Mph');
-        $( ".image" ).html('<img src="' + 'http://openweathermap.org/img/w/' + image + '.png' + '">');
-        
+        $( ".image" ).html('<img src="' + 'http://openweathermap.org/img/w/' + image + '.png' + '">'); 
     }
 }
 
