@@ -1,7 +1,7 @@
 
 var request = new XMLHttpRequest()
 
-request.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&appid=4065f941066021809bafd8f67ec9a979')
+request.open('GET', 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=Manchester,uk&appid=4065f941066021809bafd8f67ec9a979')
 
 request.onreadystatechange = function (){
     if(this.readyState === 4 && this.status === 200) {
