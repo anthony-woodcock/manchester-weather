@@ -20,7 +20,6 @@ request.onreadystatechange = function (){
         var image = weather[0].icon
 
 
-
         $( ".temp-kelvin" ).html(tempKelvin + ' &#8490;');
         $( ".temp-cel" ).html(tempCelTwoDecimal + '  &#8451;'  );
         $( ".temp-fah" ).html(tempFahrenheitTwoDecimal + '  &#8457;');
